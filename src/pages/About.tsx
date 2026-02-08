@@ -74,6 +74,53 @@ const About = () => {
             </div>
           </div>
         </div>
+
+        {/* Teaching Philosophy */}
+        <div className="max-w-3xl mx-auto mt-24">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-display font-medium text-primary">
+              Teaching Philosophy
+            </h2>
+            <div className="mt-4 mx-auto section-divider" />
+          </div>
+
+          <div className="space-y-6 text-foreground/80 font-body leading-relaxed">
+            <p>
+              Every student has their own methods of learning and problem solving. It is the
+              teacher's responsibility to guide each student through the discovery of their
+              technique and musical interpretations. There are two fundamental violin principles
+              I learned during my time at CMU that I hope to instill in each student I teach.
+            </p>
+
+            <div className="pl-6 border-l-2 border-secondary/40 space-y-4">
+              <p>
+                Standard violin technique philosophies should be taught as guidelines rather than
+                uncompromising law. Each student's anatomy, coordination, and learning process are
+                unique. A specific approach that is effective for one violinist may be
+                counterproductive for another. When instruction is limited to a single, fixed model
+                of technique, it risks failing to address the specific challenges a student
+                encounters. I believe it is essential to develop individualized solutions that
+                respond to each student's physical needs and musical goals. This approach helps
+                prevent the accumulation of inefficient habits that can lead to chronic pain or
+                injury. I strive to improve a student's ability to evaluate their own playing so
+                that they are capable of identifying technical issues independently and practice
+                with purpose.
+              </p>
+            </div>
+
+            <div className="pl-6 border-l-2 border-secondary/40 space-y-4">
+              <p>
+                Second, students should combine the ideas of technique and musicality. Each
+                movement of the fingers or arms should have a specific purpose: to make music.
+                Violinists require a physical foundation to enable the musical voice. Early
+                students have a tendency to practice mindlessly. They not only develop poor
+                practice habits, but also put their musical development on pause. By unifying
+                these elements, students build reliable physical habits while developing their
+                artistry.
+              </p>
+            </div>
+          </div>
+        </div>
       </main>
 
       <Footer />
