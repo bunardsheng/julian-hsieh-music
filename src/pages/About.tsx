@@ -1,26 +1,27 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { Parallax, FadeInOnScroll } from "@/components/ScrollEffects";
 import aboutPortrait from "@/assets/about-portrait.jpg";
 
 const About = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background overflow-x-hidden">
       <Navbar />
 
       <main className="pt-28 pb-20">
         <div className="container mx-auto px-6">
           {/* Header */}
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <h1 className="text-4xl md:text-5xl font-display font-medium text-primary animate-fade-in-up">
+          <FadeInOnScroll className="max-w-3xl mx-auto text-center mb-16">
+            <h1 className="text-4xl md:text-5xl font-display font-medium text-primary">
               About Julian
             </h1>
             <div className="mt-4 mx-auto section-divider" />
-          </div>
+          </FadeInOnScroll>
 
           {/* Portrait + Bio */}
           <div className="grid md:grid-cols-5 gap-12 md:gap-16 max-w-5xl mx-auto items-start">
-            {/* Photo */}
-            <div className="md:col-span-2 animate-fade-in" style={{ animationDelay: "0.15s" }}>
+            {/* Photo — parallax */}
+            <Parallax offset={40} className="md:col-span-2">
               <div className="aspect-[3/4] overflow-hidden rounded-2xl">
                 <img
                   src={aboutPortrait}
@@ -28,10 +29,10 @@ const About = () => {
                   className="w-full h-full object-cover"
                 />
               </div>
-            </div>
+            </Parallax>
 
             {/* Bio text */}
-            <div className="md:col-span-3 space-y-5 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
+            <FadeInOnScroll className="md:col-span-3 space-y-5" delay={0.1}>
               <div className="space-y-5 text-foreground/80 font-body leading-relaxed text-base">
                 <p>
                   Julian Hsieh is an active San Francisco-based violinist and chamber musician.
@@ -71,12 +72,12 @@ const About = () => {
                   <li>1st Prize — 2019 California VOCE Chamber Music Competition</li>
                 </ul>
               </div>
-            </div>
+            </FadeInOnScroll>
           </div>
         </div>
 
-        {/* Teaching Philosophy */}
-        <div className="max-w-3xl mx-auto mt-24">
+        {/* Teaching Philosophy — parallax + fade */}
+        <FadeInOnScroll className="max-w-3xl mx-auto mt-24 px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-display font-medium text-primary">
               Teaching Philosophy
@@ -92,7 +93,7 @@ const About = () => {
               I learned during my time at CMU that I hope to instill in each student I teach.
             </p>
 
-            <div className="pl-6 border-l-2 border-secondary/40 space-y-4">
+            <Parallax offset={20} className="pl-6 border-l-2 border-secondary/40">
               <p>
                 Standard violin technique philosophies should be taught as guidelines rather than
                 uncompromising law. Each student's anatomy, coordination, and learning process are
@@ -106,9 +107,9 @@ const About = () => {
                 that they are capable of identifying technical issues independently and practice
                 with purpose.
               </p>
-            </div>
+            </Parallax>
 
-            <div className="pl-6 border-l-2 border-secondary/40 space-y-4">
+            <Parallax offset={20} className="pl-6 border-l-2 border-secondary/40">
               <p>
                 Second, students should combine the ideas of technique and musicality. Each
                 movement of the fingers or arms should have a specific purpose: to make music.
@@ -118,9 +119,9 @@ const About = () => {
                 these elements, students build reliable physical habits while developing their
                 artistry.
               </p>
-            </div>
+            </Parallax>
           </div>
-        </div>
+        </FadeInOnScroll>
       </main>
 
       <Footer />
