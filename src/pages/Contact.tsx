@@ -21,15 +21,13 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitError(null);
-    console.log("Submitting form...", formState);
     try {
-      const res = await fetch("https://formspree.io/f/xyknqwzb", {
+      const res = await fetch("/api/send-email", {
         method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formState),
       });
       const data = await res.json();
-      console.log("Formspree response:", res.status, data);
       if (res.ok) {
         setIsSubmitted(true);
         setTimeout(() => {
