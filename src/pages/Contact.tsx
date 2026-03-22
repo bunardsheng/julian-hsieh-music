@@ -21,6 +21,7 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitError(null);
+    console.log("Submitting form...", formState);
     try {
       const res = await fetch("https://formspree.io/f/xyknqwzb", {
         method: "POST",
