@@ -27,19 +27,26 @@ const Contact = () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formState),
       });
-      const data = await res.json();
-      if (res.ok) {
-        setIsSubmitted(true);
-        setTimeout(() => {
-          setIsSubmitted(false);
-          setFormState({ name: "", email: "", subject: "", message: "" });
-        }, 3000);
-      } else {
-        setSubmitError(data?.error || `Submission failed (${res.status}). Please try again.`);
+
+      let data: { error?: string; success?: boolean } = {};
+      try {
+        data = await res.json();
+      } catch {
+        throw new Error(`Unexpected response (${res.status}). The email service may be unavailable.`);
       }
+
+      if (!res.ok) {
+        throw new Error(data?.error || `Failed to send (${res.status}). Please try again.`);
+      }
+
+      setIsSubmitted(true);
+      setTimeout(() => {
+        setIsSubmitted(false);
+        setFormState({ name: "", email: "", subject: "", message: "" });
+      }, 3000);
     } catch (err) {
-      console.error("Formspree error:", err);
-      setSubmitError("Network error. Please check your connection and try again.");
+      console.error("Send error:", err);
+      setSubmitError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
@@ -214,7 +221,7 @@ const Contact = () => {
                       />
                     </div>
                     {submitError && (
-                      <p className="text-sm text-red-400">{submitError}</p>
+                      <p className="text-sm text-red-400 border border-red-400/30 px-4 py-3 bg-red-400/10">{submitError}</p>
                     )}
                     <div className="pt-2">
                       <button
