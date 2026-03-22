@@ -154,7 +154,7 @@ const Navbar = ({ invertOnTop = false }: { invertOnTop?: boolean }) => {
                 Julian Hsieh
               </motion.p>
 
-              {[{ label: "Home", to: "/" }, ...navLinks].map((link, i) => {
+              {navLinks.map((link, i) => {
                 const isActive = location.pathname === link.to;
                 return (
                   <motion.div
