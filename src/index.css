@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,47 +6,36 @@
 
 @layer base {
   :root {
-    --background: 0 0% 99%;
-    --foreground: 218 35% 15%;
+    --background: 36 18% 97%;
+    --foreground: 222 18% 10%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 218 35% 15%;
+    --card: 36 12% 95%;
+    --card-foreground: 222 18% 10%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 218 35% 15%;
+    --popover: 36 18% 97%;
+    --popover-foreground: 222 18% 10%;
 
-    --primary: 218 50% 22%;
-    --primary-foreground: 40 20% 97%;
+    --primary: 44 88% 52%;
+    --primary-foreground: 220 20% 8%;
 
-    --secondary: 30 45% 45%;
-    --secondary-foreground: 40 20% 97%;
+    --secondary: 44 20% 91%;
+    --secondary-foreground: 222 18% 10%;
 
-    --muted: 220 25% 95%;
-    --muted-foreground: 218 15% 50%;
+    --muted: 36 10% 92%;
+    --muted-foreground: 218 8% 44%;
 
-    --accent: 30 45% 45%;
-    --accent-foreground: 40 20% 97%;
+    /* Bright gold — pulled from violin amber and Stanford warm stone */
+    --accent: 44 88% 52%;
+    --accent-foreground: 220 20% 8%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 220 20% 90%;
-    --input: 220 20% 90%;
-    --ring: 30 45% 45%;
+    --border: 36 10% 87%;
+    --input: 36 10% 87%;
+    --ring: 44 88% 52%;
 
-    --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 218 35% 15%;
-    --sidebar-primary: 218 50% 22%;
-    --sidebar-primary-foreground: 40 20% 97%;
-    --sidebar-accent: 220 25% 95%;
-    --sidebar-accent-foreground: 218 35% 15%;
-    --sidebar-border: 220 20% 90%;
-    --sidebar-ring: 30 45% 45%;
-
-    --font-display: 'Cormorant Garamond', serif;
-    --font-body: 'DM Sans', sans-serif;
+    --radius: 0.25rem;
   }
 }
 
@@ -55,29 +44,86 @@
     @apply border-border;
   }
 
+  html {
+    font-size: 16px;
+  }
+
   body {
-    @apply bg-background text-foreground;
-    font-family: var(--font-body);
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-display);
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  ::selection {
+    background-color: hsl(44 88% 52% / 0.22);
+    color: hsl(222 18% 10%);
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
   }
 }
 
 @layer utilities {
   .text-gradient-gold {
-    background: linear-gradient(135deg, hsl(35 55% 48%), hsl(35 70% 58%));
+    background: linear-gradient(135deg, hsl(44 90% 48%), hsl(38 80% 60%));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
-  .section-divider {
-    @apply w-20 h-px bg-secondary/40;
+  .link-hover {
+    position: relative;
   }
-}
 
-html {
-  scroll-behavior: smooth;
+  .link-hover::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1.5px;
+    background-color: hsl(var(--accent));
+    transition: width 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
+
+  .link-hover:hover::after {
+    width: 100%;
+  }
+
+  /* Hero photo panels — subtle grain texture for premium feel */
+  .photo-grain::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    opacity: 0.3;
+    mix-blend-mode: overlay;
+  }
 }

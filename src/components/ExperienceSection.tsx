@@ -6,14 +6,14 @@ const highlights = [
     items: [
       "Stanford Symphony Orchestra",
       "Peninsula Symphony",
-      "Chamber music concerts & masterclasses — Bay Area",
+      "Chamber music concerts & masterclasses, Bay Area",
       "Jacob Collier Audience Symphony Orchestra, SF",
     ],
   },
   {
     category: "Education",
     items: [
-      "Carnegie Mellon University — B.S. Business & B.F.A. Violin Performance (2024)",
+      "Carnegie Mellon University, B.S. Business & B.F.A. Violin Performance (2024)",
       "Studied with Professor William van der Sloot",
       "Solo recitals, CMU Philharmonic, chamber concerts",
     ],
@@ -25,7 +25,7 @@ const highlights = [
       "Orford Musique",
       "Valhalla Summer School of Music",
       "Eastman Summer Program",
-      "1st Prize — 2019 California VOCE Chamber Music Competition",
+      "1st Prize, 2019 California VOCE Chamber Music Competition",
       "CODA High School All-State Symphony Orchestra (2018, 2019)",
     ],
   },

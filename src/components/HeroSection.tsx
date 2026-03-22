@@ -25,7 +25,7 @@ const HeroSection = () => {
             Hsieh
           </h1>
           <p className="mt-6 text-base md:text-lg text-muted-foreground max-w-md font-body leading-relaxed animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
-            Violinist, chamber musician, and educator — performing and teaching across the Bay Area.
+            Violinist, chamber musician, and educator. Performing and teaching across the Bay Area.
           </p>
         </div>
 

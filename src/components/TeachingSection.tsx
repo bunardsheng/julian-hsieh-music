@@ -14,7 +14,7 @@ const TeachingSection = () => {
             Private lessons & masterclasses
           </h2>
           <p className="text-muted-foreground font-body leading-relaxed mb-8">
-            Julian offers private violin instruction and masterclasses for students of all levels throughout the San Francisco Bay Area. Drawing on his dual background in music and business, he brings a thoughtful, structured approach to each lesson — tailored to develop both technical facility and musical expression.
+            Julian offers private violin instruction and masterclasses for students of all levels throughout the San Francisco Bay Area. Drawing on his background in both music and business, he brings a structured approach to each lesson, focused on building technical facility alongside musical expression.
           </p>
 
           <div className="grid sm:grid-cols-2 gap-6">
