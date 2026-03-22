@@ -15,23 +15,32 @@ const Contact = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitError(null);
     try {
       const res = await fetch("https://formspree.io/f/xyknqwzb", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify(formState),
       });
+      const data = await res.json();
+      console.log("Formspree response:", res.status, data);
       if (res.ok) {
         setIsSubmitted(true);
         setTimeout(() => {
           setIsSubmitted(false);
           setFormState({ name: "", email: "", subject: "", message: "" });
         }, 3000);
+      } else {
+        setSubmitError(data?.error || `Submission failed (${res.status}). Please try again.`);
       }
+    } catch (err) {
+      console.error("Formspree error:", err);
+      setSubmitError("Network error. Please check your connection and try again.");
     } finally {
       setIsSubmitting(false);
     }
@@ -205,6 +214,9 @@ const Contact = () => {
                         placeholder="Your message..."
                       />
                     </div>
+                    {submitError && (
+                      <p className="text-sm text-red-400">{submitError}</p>
+                    )}
                     <div className="pt-2">
                       <button
                         type="submit"
