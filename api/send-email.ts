@@ -1,23 +1,22 @@
 import { Resend } from "resend";
+import type { VercelRequest, VercelResponse } from "@vercel/node";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-export default async function handler(req: Request) {
+export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== "POST") {
-    return new Response(JSON.stringify({ error: "Method not allowed" }), { status: 405 });
+    return res.status(405).json({ error: "Method not allowed" });
   }
 
-  let body: { name?: string; email?: string; subject?: string; message?: string };
-  try {
-    body = await req.json();
-  } catch {
-    return new Response(JSON.stringify({ error: "Invalid JSON" }), { status: 400 });
-  }
-
-  const { name, email, subject, message } = body;
+  const { name, email, subject, message } = req.body as {
+    name?: string;
+    email?: string;
+    subject?: string;
+    message?: string;
+  };
 
   if (!name || !email || !message) {
-    return new Response(JSON.stringify({ error: "Missing required fields" }), { status: 400 });
+    return res.status(400).json({ error: "Missing required fields" });
   }
 
   const { data, error } = await resend.emails.send({
@@ -36,8 +35,8 @@ export default async function handler(req: Request) {
 
   if (error) {
     console.error("Resend error:", error);
-    return new Response(JSON.stringify({ error: error.message }), { status: 500 });
+    return res.status(500).json({ error: error.message });
   }
 
-  return new Response(JSON.stringify({ success: true, id: data?.id }), { status: 200 });
+  return res.status(200).json({ success: true, id: data?.id });
 }
