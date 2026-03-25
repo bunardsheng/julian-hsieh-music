@@ -62,7 +62,7 @@ const Contact = () => {
 
       {/* ── Split hero ── */}
       <section className="pt-20 lg:pt-0 border-b border-border">
-        <div className="grid lg:grid-cols-2 min-h-[45vh] lg:min-h-[60vh]">
+        <div className="grid lg:grid-cols-2 min-h-[30vh] lg:min-h-[40vh]">
           {/* Photo panel — hidden on mobile (shows below as accent) */}
           <div className="hidden lg:block relative overflow-hidden">
             <img
