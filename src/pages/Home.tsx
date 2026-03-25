@@ -158,20 +158,20 @@ const Home = () => {
               {" "}and the art of
               <br className="hidden lg:block" /> guiding students to find their own
               <br className="hidden lg:block" />{" "}
-              <em className="not-italic text-white/40">musical voice.</em>
+              <em className="not-italic text-white">musical voice.</em>
             </p>
             <div className="mt-14 h-px w-full bg-white/8" />
             <div className="mt-8 flex items-center gap-10">
               <Link
                 to="/about"
-                className="group inline-flex items-center gap-2 text-[13px] text-white/35 hover:text-white transition-colors duration-300 tracking-wide cursor-pointer"
+                className="group inline-flex items-center gap-2 text-[13px] text-white/60 hover:text-white transition-colors duration-300 tracking-wide cursor-pointer"
               >
                 <span>Read Bio</span>
                 <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform duration-300" />
               </Link>
               <Link
                 to="/recordings"
-                className="group inline-flex items-center gap-2 text-[13px] text-white/35 hover:text-white transition-colors duration-300 tracking-wide cursor-pointer"
+                className="group inline-flex items-center gap-2 text-[13px] text-white/60 hover:text-white transition-colors duration-300 tracking-wide cursor-pointer"
               >
                 <span>Listen</span>
                 <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform duration-300" />
