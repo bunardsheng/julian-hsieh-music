@@ -13,12 +13,6 @@ const recordings = [
     year: "2026",
   },
   {
-    title: "Chausson Poème",
-    description: "Violin & Piano Quintet · March 2026",
-    videoId: "m6Xixvn6QRo",
-    year: "2026",
-  },
-  {
     title: "Dvořák Piano Quintet No. 2",
     description: "Op. 81 · March 2026",
     videoId: "u5zt7Mwpe8g",
@@ -124,11 +118,12 @@ const Recordings = () => {
                   </div>
                 </button>
               ))}
+              {/* Placeholder card */}
+              <div className="group relative aspect-video overflow-hidden rounded-sm border border-border flex flex-col items-center justify-center gap-3 bg-muted/30">
+                <div className="w-6 h-px bg-accent/50" />
+                <p className="font-display text-foreground/30 text-[13px] tracking-tight">More coming soon</p>
+              </div>
             </div>
-
-            <p className="text-[11px] uppercase tracking-[0.22em] text-muted-foreground/50 mt-10">
-              More recordings coming soon
-            </p>
           </FadeInOnScroll>
         </div>
       </section>

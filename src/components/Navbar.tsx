@@ -6,6 +6,7 @@ import { AnimatePresence, motion } from "framer-motion";
 const navLinks = [
   { label: "Home", to: "/" },
   { label: "About", to: "/about" },
+  { label: "Teaching", to: "/teaching" },
   { label: "Recordings", to: "/recordings" },
   { label: "Contact", to: "/contact" },
 ];
@@ -86,25 +87,6 @@ const Navbar = ({ invertOnTop = false }: { invertOnTop?: boolean }) => {
               );
             })}
 
-            {/* ── CTA button ── */}
-            {isInverted ? (
-              /* Over dark hero — frosted glass square */
-              <Link
-                to="/contact"
-                className="group inline-flex items-center gap-1.5 px-4 py-[7px] text-[13px] font-medium tracking-[0.03em] text-white border border-white/50 bg-white/10 backdrop-blur-sm hover:bg-accent hover:border-accent hover:text-[#0d0e12] transition-all duration-300 cursor-pointer"
-              >
-                Book a Lesson
-              </Link>
-            ) : (
-              /* Scrolled / light bg — solid dark → gold on hover */
-              <Link
-                to="/contact"
-                className="group relative inline-flex items-center gap-1.5 px-4 py-[7px] text-[13px] font-medium tracking-[0.03em] overflow-hidden bg-foreground text-background hover:text-[#0d0e12] transition-colors duration-400 cursor-pointer"
-              >
-                <span className="absolute inset-0 bg-accent translate-y-full group-hover:translate-y-0 transition-transform duration-400 ease-[cubic-bezier(0.23,1,0.32,1)]" />
-                <span className="relative z-10">Book a Lesson</span>
-              </Link>
-            )}
           </div>
 
           {/* ── Mobile toggle ── */}
@@ -180,21 +162,6 @@ const Navbar = ({ invertOnTop = false }: { invertOnTop?: boolean }) => {
                 );
               })}
 
-              {/* Mobile CTA */}
-              <motion.div
-                className="mt-10"
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.1 + 4 * 0.07, duration: 0.45 }}
-              >
-                <Link
-                  to="/contact"
-                  onClick={() => setOpen(false)}
-                  className="inline-flex items-center px-7 py-3.5 bg-accent text-[#0d0e12] text-sm font-semibold tracking-[0.04em] cursor-pointer"
-                >
-                  Book a Lesson
-                </Link>
-              </motion.div>
             </nav>
           </motion.div>
         )}
