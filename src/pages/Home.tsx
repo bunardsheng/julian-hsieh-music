@@ -4,8 +4,8 @@ import { useRef } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { FadeInOnScroll } from "@/components/ScrollEffects";
+import shoot11 from "@/assets/Shoot 11.jpeg";
 import photo2 from "@/assets/photo-2.jpg";
-import photo1 from "@/assets/photo-1.jpg";
 import { ArrowRight, ArrowDownRight } from "lucide-react";
 
 const Home = () => {
@@ -39,20 +39,20 @@ const Home = () => {
         {/* Photo fills the right portion of the hero on desktop, full-bleed on mobile */}
         <motion.div
           className="absolute inset-0 lg:left-[50%]"
-          style={{ scale: imgScale }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
         >
           <img
-            src={photo2}
-            alt="Julian Hsieh at Stanford"
-            className="w-full h-full object-cover object-[center_30%]"
+            src={shoot11}
+            alt="Julian Hsieh performing"
+            className="w-full h-full object-cover object-[center_20%]"
           />
-          {/* gradient bleeding the photo into the dark left side */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#13161f] via-[#13161f]/30 to-transparent lg:via-[#13161f]/10" />
-          {/* subtle bottom vignette */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#13161f]/60 via-transparent to-transparent" />
+          {/* Linear vignette — left edge is 100% solid #13161f, feathers naturally into photo */}
+          <div className="absolute inset-0 hidden lg:block" style={{ background: "linear-gradient(to right, #13161f 0%, #13161f 5%, rgba(19,22,31,0.6) 20%, rgba(19,22,31,0.15) 40%, transparent 60%)" }} />
+          <div className="absolute inset-0 lg:hidden bg-gradient-to-r from-[#13161f] via-[#13161f]/50 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#13161f]/15 via-transparent to-transparent" />
+          {/* Mobile: full darkening overlay handled by sibling below */}
         </motion.div>
 
         {/* Mobile overlay — darken photo for text legibility */}
@@ -143,99 +143,79 @@ const Home = () => {
         </motion.div>
       </section>
 
-      {/* ── Pull quote ── */}
-      <section className="bg-[#13161f] py-28 lg:py-36">
+      {/* ── Bio ── */}
+      <section className="bg-background py-16 lg:py-24">
         <div className="container mx-auto px-6 lg:px-14">
-          <FadeInOnScroll>
-            <p className="text-[10px] uppercase tracking-[0.35em] text-white/30 mb-12">
-              Philosophy
-            </p>
-            <p className="font-display text-white font-semibold leading-[1.1] tracking-tight"
-              style={{ fontSize: "clamp(1.5rem,2.8vw,2.6rem)" }}>
-              Classically trained with a passion
-              <br className="hidden lg:block" /> for{" "}
-              <em className="not-italic text-accent">chamber music</em>
-              {" "}and the art of
-              <br className="hidden lg:block" /> guiding students to find their own
-              <br className="hidden lg:block" />{" "}
-              <em className="not-italic text-white">musical voice.</em>
-            </p>
-            <div className="mt-14 h-px w-full bg-white/8" />
-            <div className="mt-8 flex items-center gap-10">
-              <Link
-                to="/about"
-                className="group inline-flex items-center gap-2 text-[13px] text-white/60 hover:text-white transition-colors duration-300 tracking-wide cursor-pointer"
-              >
-                <span>Read Bio</span>
-                <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform duration-300" />
-              </Link>
-              <Link
-                to="/recordings"
-                className="group inline-flex items-center gap-2 text-[13px] text-white/60 hover:text-white transition-colors duration-300 tracking-wide cursor-pointer"
-              >
-                <span>Listen</span>
-                <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform duration-300" />
-              </Link>
-            </div>
-          </FadeInOnScroll>
-        </div>
-      </section>
-
-      {/* ── Teaching feature ── */}
-      <section className="overflow-hidden">
-        <div className="grid lg:grid-cols-2">
-          {/* Image panel */}
-          <FadeInOnScroll direction="right" className="relative overflow-hidden">
-            <div className="relative group h-[420px] lg:h-full min-h-[420px]">
-              <img
-                src={photo1}
-                alt="Julian Hsieh"
-                className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-[1.03]"
-              />
-            </div>
-          </FadeInOnScroll>
-
-          {/* Text panel */}
-          <FadeInOnScroll delay={0.15} className="bg-background flex items-center">
-            <div className="px-10 py-20 lg:px-16 lg:py-28 max-w-lg">
-              <p className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground mb-6">
-                Private Lessons
-              </p>
-              <h2 className="font-display text-foreground font-semibold leading-[1.1] tracking-tight mb-8"
-                style={{ fontSize: "clamp(2rem,3.5vw,3rem)" }}>
-                Begin Your
-                <br />
-                <em className="not-italic" style={{ color: "hsl(44 88% 38%)" }}>Musical Journey</em>
-              </h2>
-              <div className="space-y-4 text-muted-foreground text-[15px] leading-relaxed mb-10">
-                <p>
-                  Every student has their own methods of learning. My job is to
-                  guide each person through discovering their own technique and
-                  musical voice.
-                </p>
-                <p>
-                  Currently accepting students of all levels around the Bay
-                  Area. Trial lessons available.
-                </p>
+          <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+            {/* Portrait */}
+            <FadeInOnScroll className="lg:col-span-4">
+              <div className="relative overflow-hidden">
+                <img
+                  src={photo2}
+                  alt="Julian Hsieh"
+                  className="w-full aspect-[3/4] object-cover object-[center_30%]"
+                />
               </div>
-              <Link
-                to="/contact"
-                className="group relative inline-flex items-center gap-3 px-7 py-3.5 border border-foreground/20 text-foreground text-sm tracking-wide overflow-hidden hover:border-accent transition-colors duration-500 cursor-pointer"
-              >
-                <span className="absolute inset-0 bg-accent translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]" />
-                <span className="relative z-10 group-hover:text-[#0d0e12] transition-colors duration-200">Schedule a Trial Lesson</span>
-                <ArrowRight size={14} className="relative z-10 group-hover:translate-x-1 group-hover:text-[#0d0e12] transition-all duration-300" />
-              </Link>
-            </div>
-          </FadeInOnScroll>
+            </FadeInOnScroll>
+
+            {/* Text */}
+            <FadeInOnScroll delay={0.1} className="lg:col-span-8 lg:pt-2">
+              <div className="space-y-8">
+                <p className="text-[10px] uppercase tracking-[0.35em] text-muted-foreground">
+                  About
+                </p>
+                <div className="space-y-4 text-[15px] text-foreground/85 leading-[1.8]">
+                  <p>
+                    Julian Hsieh is an active San Francisco-based violinist and chamber musician. He
+                    currently plays with the Stanford Symphony Orchestra, Peninsula Symphony, hosts
+                    chamber music concerts, and teaches masterclasses around the Bay Area. He also
+                    performed in the Jacob Collier Audience Symphony Orchestra at Davies Symphony Hall
+                    during his 2025 tour.
+                  </p>
+                  <p>
+                    Julian graduated with a dual degree in Business and Violin Performance from Carnegie
+                    Mellon University. He studied with Professor William van der Sloot and performed in
+                    solo recitals, orchestral concerts with the CMU Philharmonic, and numerous chamber
+                    music concerts.
+                  </p>
+                  <p>
+                    Julian's additional musical training includes studies at the Meadowmount School of
+                    Music, Borromeo Music Festival, Orford Musique, Valhalla Summer School of Music, and
+                    the Eastman Summer Program. Before his undergraduate education, he was the 1st prize
+                    winner of the 2019 California VOCE Chamber Music Competition and attended the 2018
+                    and 2019 CODA All-State Symphony Orchestras.
+                  </p>
+                </div>
+                <div className="h-px w-full bg-foreground/8" />
+                <div className="flex items-center gap-4">
+                  <Link
+                    to="/teaching"
+                    className="group relative inline-flex items-center gap-3 px-6 py-3 border border-foreground/20 text-foreground text-[13px] tracking-wide overflow-hidden hover:border-accent transition-colors duration-500 cursor-pointer"
+                  >
+                    <span className="absolute inset-0 bg-accent translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]" />
+                    <span className="relative z-10 group-hover:text-[#0d0e12] transition-colors duration-200">Teaching Philosophy</span>
+                    <ArrowRight size={13} className="relative z-10 group-hover:translate-x-1 group-hover:text-[#0d0e12] transition-all duration-300" />
+                  </Link>
+                  <Link
+                    to="/recordings"
+                    className="group relative inline-flex items-center gap-3 px-6 py-3 border border-foreground/20 text-foreground text-[13px] tracking-wide overflow-hidden hover:border-accent transition-colors duration-500 cursor-pointer"
+                  >
+                    <span className="absolute inset-0 bg-accent translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]" />
+                    <span className="relative z-10 group-hover:text-[#0d0e12] transition-colors duration-200">Listen</span>
+                    <ArrowRight size={13} className="relative z-10 group-hover:translate-x-1 group-hover:text-[#0d0e12] transition-all duration-300" />
+                  </Link>
+                </div>
+              </div>
+            </FadeInOnScroll>
+          </div>
         </div>
       </section>
 
       {/* ── Bottom CTA ── */}
       <section className="bg-[#13161f] px-10 py-28 lg:px-16 lg:py-40 flex flex-col items-center text-center">
         <FadeInOnScroll>
-          <p className="text-[10px] uppercase tracking-[0.38em] text-accent/60 mb-10">
-            Lessons · Performances · Collaborations
+          <p className="text-[12px] uppercase tracking-[0.38em] text-accent/60 mb-10">
+            Contact
           </p>
           <h2
             className="font-display text-white font-semibold leading-[1.0] tracking-tight"

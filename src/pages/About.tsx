@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { FadeInOnScroll } from "@/components/ScrollEffects";
-import photo3 from "@/assets/photo-3.jpg";
+import photo3 from "@/assets/photo-1.jpg";
 import { ArrowRight } from "lucide-react";
 
 const About = () => {
@@ -38,7 +38,7 @@ const About = () => {
               </FadeInOnScroll>
 
               <FadeInOnScroll delay={0.1}>
-                <div className="space-y-5 text-[15px] text-muted-foreground leading-[1.8]">
+                <div className="space-y-5 text-[15px] text-foreground/75 leading-[1.8]">
                   <p>
                     Julian Hsieh is an active San Francisco-based violinist and chamber musician. He
                     currently plays with the Stanford Symphony Orchestra, Peninsula Symphony, hosts
@@ -65,7 +65,7 @@ const About = () => {
               <FadeInOnScroll delay={0.25}>
                 <Link
                   to="/recordings"
-                  className="group inline-flex items-center gap-2 text-sm font-medium text-foreground/50 hover:text-foreground transition-colors duration-300 tracking-wide cursor-pointer"
+                  className="group inline-flex items-center gap-2 text-sm font-medium text-foreground/60 hover:text-foreground transition-colors duration-300 tracking-wide cursor-pointer"
                 >
                   <span>Listen to Recordings</span>
                   <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform duration-300" />
