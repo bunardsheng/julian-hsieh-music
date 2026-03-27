@@ -38,7 +38,7 @@ const Home = () => {
 
         {/* Photo fills the right portion of the hero on desktop, full-bleed on mobile */}
         <motion.div
-          className="absolute inset-0 lg:left-[52%]"
+          className="absolute inset-0 lg:left-[47%]"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}

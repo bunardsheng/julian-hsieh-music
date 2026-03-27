@@ -64,7 +64,7 @@ const Contact = () => {
       <Navbar invertOnTop />
 
       {/* ── Hero ── */}
-      <section className="relative bg-[#13161f] min-h-[38vh] flex items-end overflow-hidden">
+      <section className="relative bg-[#13161f] min-h-[38vh] flex items-center overflow-hidden">
         {/* Mobile: full-width background image with bottom fade */}
         <div className="absolute inset-0 lg:hidden">
           <img
@@ -87,7 +87,7 @@ const Contact = () => {
           <div className="absolute inset-0 bg-gradient-to-l from-[#13161f] via-[#13161f]/60 to-transparent" />
         </div>
 
-        <div className="relative z-10 container mx-auto px-6 lg:px-14 pb-20 pt-36 max-w-screen-lg">
+        <div className="relative z-10 container mx-auto px-6 lg:px-14 max-w-screen-lg flex justify-center">
           <FadeInOnScroll>
             <h1
               className="font-display font-semibold text-white leading-[0.92] tracking-tight"
