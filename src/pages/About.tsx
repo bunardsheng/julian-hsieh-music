@@ -22,6 +22,7 @@ const About = () => {
                   src={photo3}
                   alt="Julian Hsieh"
                   className="w-full aspect-[3/4] object-cover object-[center_10%]"
+                  loading="lazy"
                 />
               </div>
             </FadeInOnScroll>
@@ -31,7 +32,7 @@ const About = () => {
               <FadeInOnScroll delay={0.05}>
                 <h1
                   className="font-display font-semibold text-foreground leading-[0.92] tracking-tight"
-                  style={{ fontSize: "clamp(2.5rem,6vw,5rem)" }}
+                  style={{ fontSize: "clamp(2rem,4vw,3.2rem)" }}
                 >
                   About
                 </h1>

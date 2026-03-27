@@ -89,18 +89,12 @@ const Contact = () => {
 
         <div className="relative z-10 container mx-auto px-6 lg:px-14 pb-20 pt-36 max-w-screen-lg">
           <FadeInOnScroll>
-            <div className="max-w-md">
-              <p className="text-[10px] uppercase tracking-[0.35em] text-white/50 mb-4">Contact</p>
-              <h1
-                className="font-display font-semibold text-white leading-[0.92] tracking-tight"
-                style={{ fontSize: "clamp(2.8rem,5vw,4.2rem)" }}
-              >
-                Get in Touch
-              </h1>
-              <p className="mt-4 text-white/55 text-[14px] leading-relaxed">
-                Available for lessons, performances, and collaborations around the Bay Area.
-              </p>
-            </div>
+            <h1
+              className="font-display font-semibold text-white leading-[0.92] tracking-tight"
+              style={{ fontSize: "clamp(2rem,4vw,3.2rem)" }}
+            >
+              Get in Touch
+            </h1>
           </FadeInOnScroll>
         </div>
       </section>

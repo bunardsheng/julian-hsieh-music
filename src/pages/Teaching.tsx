@@ -15,9 +15,8 @@ const Teaching = () => {
           {/* Philosophy content */}
           <div className="max-w-4xl w-full">
             <FadeInOnScroll>
-              <p className="text-[10px] uppercase tracking-[0.3em] text-accent/70 mb-4">Teaching</p>
-              <h1 className="font-display text-white font-semibold leading-[1.05] tracking-tight mb-10"
-                style={{ fontSize: "clamp(1.8rem,3vw,2.5rem)" }}>
+              <h1 className="font-display text-white font-semibold leading-[0.92] tracking-tight mb-10"
+                style={{ fontSize: "clamp(2rem,4vw,3.2rem)" }}>
                 Teaching <em className="text-accent not-italic">Philosophy</em>
               </h1>
             </FadeInOnScroll>

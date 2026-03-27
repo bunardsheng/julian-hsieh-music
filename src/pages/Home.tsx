@@ -4,8 +4,8 @@ import { useRef } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { FadeInOnScroll } from "@/components/ScrollEffects";
+import shoot19 from "@/assets/Shoot 19 Edited.jpg";
 import shoot11 from "@/assets/Shoot 11.jpeg";
-import photo2 from "@/assets/photo-2.jpg";
 import { ArrowRight, ArrowDownRight } from "lucide-react";
 
 const Home = () => {
@@ -38,21 +38,25 @@ const Home = () => {
 
         {/* Photo fills the right portion of the hero on desktop, full-bleed on mobile */}
         <motion.div
-          className="absolute inset-0 lg:left-[50%]"
+          className="absolute inset-0 lg:left-[52%]"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
         >
           <img
-            src={shoot11}
+            src={shoot19}
             alt="Julian Hsieh performing"
-            className="w-full h-full object-cover object-[center_20%]"
+            className="w-full h-full object-cover object-[center_30%]"
           />
-          {/* Linear vignette — left edge is 100% solid #13161f, feathers naturally into photo */}
+          {/* Left — solid blend into dark panel */}
           <div className="absolute inset-0 hidden lg:block" style={{ background: "linear-gradient(to right, #13161f 0%, #13161f 5%, rgba(19,22,31,0.6) 20%, rgba(19,22,31,0.15) 40%, transparent 60%)" }} />
           <div className="absolute inset-0 lg:hidden bg-gradient-to-r from-[#13161f] via-[#13161f]/50 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#13161f]/15 via-transparent to-transparent" />
-          {/* Mobile: full darkening overlay handled by sibling below */}
+          {/* Top vignette */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#13161f]/30 via-transparent to-transparent" />
+          {/* Bottom vignette */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#13161f]/30 via-transparent to-transparent" />
+          {/* Right vignette */}
+          <div className="absolute inset-0 bg-gradient-to-l from-[#13161f]/65 via-transparent to-transparent" />
         </motion.div>
 
         {/* Mobile overlay — darken photo for text legibility */}
@@ -72,7 +76,7 @@ const Home = () => {
               transition={{ delay: 0.1, duration: 0.5 }}
             >
               <span className="w-5 h-px bg-accent/60" />
-              <span className="text-[12px] uppercase tracking-[0.28em] text-white/60">San Francisco, CA</span>
+              <span className="text-[12px] uppercase tracking-[0.28em] text-white/90">San Francisco, CA</span>
             </motion.div>
 
             {/* Name */}
@@ -93,7 +97,7 @@ const Home = () => {
 
             {/* Tagline */}
             <motion.p
-              className="mt-6 text-white/65 max-w-sm text-[15px] leading-relaxed"
+              className="mt-6 text-white/90 max-w-sm text-[15px] leading-relaxed"
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.35, duration: 0.5 }}
@@ -151,9 +155,10 @@ const Home = () => {
             <FadeInOnScroll className="lg:col-span-4">
               <div className="relative overflow-hidden">
                 <img
-                  src={photo2}
+                  src={shoot11}
                   alt="Julian Hsieh"
-                  className="w-full aspect-[3/4] object-cover object-[center_30%]"
+                  className="w-full aspect-[3/5] object-cover object-top"
+                  loading="lazy"
                 />
               </div>
             </FadeInOnScroll>
@@ -226,7 +231,7 @@ const Home = () => {
             <span className="text-accent">together</span>
           </h2>
           <div className="mt-8 mx-auto h-px w-12 bg-accent/30" />
-          <p className="mt-8 text-white/65 text-[17px] max-w-sm leading-relaxed mx-auto">
+          <p className="mt-8 text-white/90 text-[17px] max-w-sm leading-relaxed mx-auto">
             Available for lessons, performances, and collaborations around the Bay Area.
           </p>
           <div className="mt-12">

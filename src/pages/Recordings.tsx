@@ -7,12 +7,6 @@ import { Play, X } from "lucide-react";
 
 const recordings = [
   {
-    title: "Rachmaninoff / Heifetz",
-    description: "It's Peaceful Here · Julian Hsieh · Violin",
-    videoId: "LoMTDmGdOLs",
-    year: "2026",
-  },
-  {
     title: "Dvořák Piano Quintet No. 2",
     description: "Op. 81 · March 2026",
     videoId: "u5zt7Mwpe8g",
@@ -49,23 +43,12 @@ const Recordings = () => {
       {/* ── Page header ── */}
       <section className="pt-32 pb-16 lg:pt-40 lg:pb-20">
         <div className="container mx-auto px-6 lg:px-14">
-          <motion.div
-            className="inline-flex items-center gap-3 mb-6"
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.7 }}
-          >
-            <span className="w-5 h-px bg-accent/60" />
-            <span className="text-[11px] uppercase tracking-[0.3em] text-muted-foreground">
-              Performances
-            </span>
-          </motion.div>
           <motion.h1
             className="font-display font-semibold text-foreground leading-[0.92] tracking-tight"
-            style={{ fontSize: "clamp(3rem,7vw,6rem)" }}
+            style={{ fontSize: "clamp(2rem,4vw,3.2rem)" }}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.35, duration: 0.9, ease: [0.25, 0.1, 0.25, 1] }}
+            transition={{ delay: 0.2, duration: 0.9, ease: [0.25, 0.1, 0.25, 1] }}
           >
             Recordings
           </motion.h1>
@@ -85,9 +68,10 @@ const Recordings = () => {
                 >
                   {/* Thumbnail */}
                   <img
-                    src={`https://img.youtube.com/vi/${rec.videoId}/maxresdefault.jpg`}
+                    src={`https://img.youtube.com/vi/${rec.videoId}/hqdefault.jpg`}
                     alt={rec.title}
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-[1.03]"
+                    loading="lazy"
                   />
 
                   {/* Gradient overlay — stronger at bottom for text legibility */}
