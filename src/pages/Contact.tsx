@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { FadeInOnScroll } from "@/components/ScrollEffects";
-import photo1 from "@/assets/photo-1.jpg";
+import photo1 from "@/assets/Shoot 9 Edit.jpg";
 import { Check, ArrowRight } from "lucide-react";
 
 const inputClass =

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { FadeInOnScroll } from "@/components/ScrollEffects";
-import photo3 from "@/assets/photo-1.jpg";
+import photo3 from "@/assets/Shoot 9 Edit.jpg";
 import { ArrowRight } from "lucide-react";
 
 const About = () => {

@@ -5,7 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { FadeInOnScroll } from "@/components/ScrollEffects";
 import shoot19 from "@/assets/Shoot 19 Edited.jpg";
-import shoot11 from "@/assets/Shoot 11.jpeg";
+import shoot11 from "@/assets/Shoot 11 Edit.jpg";
 import { ArrowRight, ArrowDownRight } from "lucide-react";
 
 const Home = () => {
