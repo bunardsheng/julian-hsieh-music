@@ -7,7 +7,7 @@ import photo1 from "@/assets/Shoot 9 Edit.jpg";
 import { Check, ArrowRight } from "lucide-react";
 
 const inputClass =
-  "w-full px-4 py-3 bg-background border border-foreground/12 text-foreground text-sm focus:outline-none focus:border-accent transition-colors duration-200 placeholder:text-muted-foreground/40 rounded-none";
+  "w-full px-4 py-3 bg-background border border-foreground/12 text-foreground text-sm focus:outline-none focus:border-accent transition-colors duration-200 placeholder:text-muted-foreground/70 rounded-none";
 
 const Contact = () => {
   const [formState, setFormState] = useState({
@@ -71,6 +71,7 @@ const Contact = () => {
             src={photo1}
             alt="Julian Hsieh"
             className="w-full h-full object-cover object-[30%_10%]"
+            fetchPriority="high"
           />
           <div className="absolute inset-0 bg-[#13161f]/40" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#13161f] via-[#13161f]/50 to-transparent" />
@@ -82,15 +83,16 @@ const Contact = () => {
             src={photo1}
             alt="Julian Hsieh"
             className="w-full h-full object-cover object-[30%_10%]"
+            fetchPriority="high"
           />
           <div className="absolute inset-0 bg-[#13161f]/25" />
           <div className="absolute inset-0 bg-gradient-to-l from-[#13161f] via-[#13161f]/60 to-transparent" />
         </div>
 
-        <div className="relative z-10 container mx-auto px-6 lg:px-14 max-w-screen-lg">
+        <div className="relative z-10 container mx-auto px-6 lg:px-14 max-w-screen-lg flex justify-center">
           <FadeInOnScroll>
             <h1
-              className="font-display font-semibold text-white leading-[0.92] tracking-tight"
+              className="font-display font-semibold text-white leading-[0.92] tracking-tight text-center"
               style={{ fontSize: "clamp(2rem,4vw,3.2rem)" }}
             >
               Get in Touch
@@ -106,7 +108,11 @@ const Contact = () => {
             <div className="max-w-[680px] mx-auto relative -mt-6 lg:-mt-8 z-20 bg-background border border-border shadow-[0_8px_40px_rgba(0,0,0,0.10)] px-8 py-10 lg:px-12 lg:py-12">
 
               {/* Accent top bar */}
-              <div className="h-[3px] w-10 bg-accent mb-8" />
+              <div className="h-[3px] w-10 bg-accent mb-6" />
+
+              <p className="text-foreground/70 text-sm leading-relaxed mb-8">
+                If you're curious about lessons or have a collaboration in mind, feel free to send me a message below. Prospective students are welcome to a free trial lesson.
+              </p>
 
               {isSubmitted ? (
                 <motion.div
@@ -126,7 +132,7 @@ const Contact = () => {
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <div className="grid sm:grid-cols-2 gap-5">
                     <div>
-                      <label htmlFor="contact-name" className="block text-[10px] uppercase tracking-[0.18em] text-muted-foreground mb-2">
+                      <label htmlFor="contact-name" className="block text-[10px] uppercase tracking-[0.18em] text-foreground/60 mb-2">
                         Name
                       </label>
                       <input
@@ -141,7 +147,7 @@ const Contact = () => {
                       />
                     </div>
                     <div>
-                      <label htmlFor="contact-email" className="block text-[10px] uppercase tracking-[0.18em] text-muted-foreground mb-2">
+                      <label htmlFor="contact-email" className="block text-[10px] uppercase tracking-[0.18em] text-foreground/60 mb-2">
                         Email
                       </label>
                       <input
@@ -158,7 +164,7 @@ const Contact = () => {
                   </div>
 
                   <div>
-                    <label htmlFor="contact-subject" className="block text-[10px] uppercase tracking-[0.18em] text-muted-foreground mb-2">
+                    <label htmlFor="contact-subject" className="block text-[10px] uppercase tracking-[0.18em] text-foreground/60 mb-2">
                       Subject
                     </label>
                     <input
@@ -174,7 +180,7 @@ const Contact = () => {
                   </div>
 
                   <div>
-                    <label htmlFor="contact-message" className="block text-[10px] uppercase tracking-[0.18em] text-muted-foreground mb-2">
+                    <label htmlFor="contact-message" className="block text-[10px] uppercase tracking-[0.18em] text-foreground/60 mb-2">
                       Message
                     </label>
                     <textarea

@@ -7,6 +7,12 @@ import { Play, X } from "lucide-react";
 
 const recordings = [
   {
+    title: "Jacob Collier: In My Room",
+    description: "Collaboration · 2025",
+    videoId: "kSOWR3SFm2U",
+    year: "2025",
+  },
+  {
     title: "Dvořák Piano Quintet No. 2",
     description: "Op. 81 · March 2026",
     videoId: "u5zt7Mwpe8g",
@@ -68,10 +74,13 @@ const Recordings = () => {
                 >
                   {/* Thumbnail */}
                   <img
-                    src={`https://img.youtube.com/vi/${rec.videoId}/hqdefault.jpg`}
+                    src={`https://img.youtube.com/vi/${rec.videoId}/maxresdefault.jpg`}
                     alt={rec.title}
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-[1.03]"
                     loading="lazy"
+                    onError={(e) => {
+                      (e.currentTarget as HTMLImageElement).src = `https://img.youtube.com/vi/${rec.videoId}/hqdefault.jpg`;
+                    }}
                   />
 
                   {/* Gradient overlay — stronger at bottom for text legibility */}

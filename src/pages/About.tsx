@@ -22,7 +22,7 @@ const About = () => {
                   src={photo3}
                   alt="Julian Hsieh"
                   className="w-full aspect-[3/4] object-cover object-[center_10%]"
-                  loading="lazy"
+                  fetchPriority="high"
                 />
               </div>
             </FadeInOnScroll>
@@ -66,10 +66,11 @@ const About = () => {
               <FadeInOnScroll delay={0.25}>
                 <Link
                   to="/recordings"
-                  className="group inline-flex items-center gap-2 text-sm font-medium text-foreground/60 hover:text-foreground transition-colors duration-300 tracking-wide cursor-pointer"
+                  className="group relative inline-flex items-center gap-3 px-6 py-3 border border-foreground/20 text-foreground text-[13px] tracking-wide overflow-hidden hover:border-accent transition-colors duration-500 cursor-pointer"
                 >
-                  <span>Listen to Recordings</span>
-                  <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform duration-300" />
+                  <span className="absolute inset-0 bg-accent translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]" />
+                  <span className="relative z-10 group-hover:text-[#0d0e12] transition-colors duration-200">Listen to Recordings</span>
+                  <ArrowRight size={13} className="relative z-10 group-hover:translate-x-1 group-hover:text-[#0d0e12] transition-all duration-300" />
                 </Link>
               </FadeInOnScroll>
             </div>

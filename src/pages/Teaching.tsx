@@ -37,8 +37,8 @@ const Teaching = () => {
                   solutions that respond to each student's technical abilities and musical goals. This approach
                   helps prevent the accumulation of inefficient habits that can lead to chronic pain or injury.
                   More importantly, it creates space for students to experiment with their sound and phrasing so
-                  they begin to form their own musical preferences and intuition. I strive to improve a student's
-                  ability to evaluate their own playing so that they are capable of identifying technical issues
+                  they begin to form their own musical intuition. I strive to improve each student's ability to
+                  evaluate their own playing so that they are capable of identifying technical issues
                   independently and practice with purpose.
                 </p>
                 <p>

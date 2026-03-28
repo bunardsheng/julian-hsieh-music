@@ -41,12 +41,13 @@ const Home = () => {
           className="absolute inset-0 lg:left-[47%]"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
+          transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1] }}
         >
           <img
             src={shoot19}
             alt="Julian Hsieh performing"
             className="w-full h-full object-cover object-[center_30%]"
+            fetchPriority="high"
           />
           {/* Left — solid blend into dark panel */}
           <div className="absolute inset-0 hidden lg:block" style={{ background: "linear-gradient(to right, #13161f 0%, #13161f 5%, rgba(19,22,31,0.6) 20%, rgba(19,22,31,0.15) 40%, transparent 60%)" }} />
@@ -119,12 +120,6 @@ const Home = () => {
                 <span className="absolute inset-0 bg-accent translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]" />
                 <span className="relative z-10 group-hover:text-[#0d0e12] transition-colors duration-200">Book a Lesson</span>
                 <ArrowRight size={14} className="relative z-10 group-hover:translate-x-1 group-hover:text-[#0d0e12] transition-all duration-300" />
-              </Link>
-              <Link
-                to="/about"
-                className="text-sm text-white/35 hover:text-white/70 transition-colors duration-300 tracking-wide cursor-pointer"
-              >
-                Learn More
               </Link>
             </motion.div>
           </motion.div>
@@ -231,8 +226,8 @@ const Home = () => {
             <span className="text-accent">together</span>
           </h2>
           <div className="mt-8 mx-auto h-px w-12 bg-accent/30" />
-          <p className="mt-8 text-white/90 text-[17px] max-w-sm leading-relaxed mx-auto">
-            Available for lessons, performances, and collaborations around the Bay Area.
+          <p className="mt-8 text-white/90 text-[17px] max-w-2xl leading-relaxed mx-auto">
+            Available for lessons, performances, and collaborations around the Bay Area. Prospective students are welcome to a free trial lesson.
           </p>
           <div className="mt-12">
             <Link
