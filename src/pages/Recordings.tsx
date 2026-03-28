@@ -7,7 +7,7 @@ import { Play, X } from "lucide-react";
 
 const recordings = [
   {
-    title: "Jacob Collier: In My Room",
+    title: "Jacob Collier: Something Heavy",
     description: "Collaboration · 2025",
     videoId: "kSOWR3SFm2U",
     year: "2025",
