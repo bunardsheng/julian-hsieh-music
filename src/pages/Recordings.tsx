@@ -7,6 +7,18 @@ import { Play, X } from "lucide-react";
 
 const recordings = [
   {
+    title: "Rachmaninoff: It's Peaceful Here",
+    description: "Arranged by Jascha Heifetz · Violin & Piano",
+    videoId: "MNviJpdVAv0",
+    year: "2026",
+  },
+  {
+    title: "Amy Beach: Romance in A Major",
+    description: "Op. 23 · Violin & Piano",
+    videoId: "kw7S_76Qye0",
+    year: "2026",
+  },
+  {
     title: "Jacob Collier: Something Heavy",
     description: "Collaboration · 2025",
     videoId: "kSOWR3SFm2U",

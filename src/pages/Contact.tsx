@@ -110,8 +110,16 @@ const Contact = () => {
               {/* Accent top bar */}
               <div className="h-[3px] w-10 bg-accent mb-6" />
 
-              <p className="text-foreground/70 text-sm leading-relaxed mb-8">
+              <p className="text-foreground/70 text-sm leading-relaxed mb-3">
                 If you're curious about lessons or have a collaboration in mind, feel free to send me a message below. Prospective students are welcome to a free trial lesson.
+              </p>
+              <p className="text-sm mb-8">
+                <a
+                  href="mailto:julianhsiehcontact@gmail.com"
+                  className="text-foreground underline underline-offset-4 hover:text-accent transition-colors duration-200"
+                >
+                  julianhsiehcontact@gmail.com
+                </a>
               </p>
 
               {isSubmitted ? (
