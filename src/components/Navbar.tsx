@@ -113,17 +113,6 @@ const Navbar = ({ invertOnTop = false }: { invertOnTop?: boolean }) => {
             className="fixed inset-0 z-40 md:hidden"
             style={{ background: "#0d0e12" }}
           >
-            {/* Close button */}
-            <div className="absolute top-0 right-0 p-5">
-              <button
-                onClick={() => setOpen(false)}
-                className="p-2 text-white/60 hover:text-white transition-colors cursor-pointer"
-                aria-label="Close menu"
-              >
-                <X size={22} strokeWidth={1.75} />
-              </button>
-            </div>
-
             {/* Links */}
             <nav className="flex flex-col justify-center h-full px-10 gap-1">
               {/* Eyebrow */}
